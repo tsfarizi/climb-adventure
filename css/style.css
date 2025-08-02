@@ -1,0 +1,362 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+main {
+    flex-grow: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.card-img-top {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card {
+    border: 1px solid #e9ecef;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+    transform: translateY(-3px);
+}
+
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #343a40 !important;
+    display: flex; /* For aligning icon and text */
+    align-items: center; /* For aligning icon and text */
+}
+
+.navbar-brand-icon {
+    font-size: 1.3em; /* Adjust as needed */
+    margin-right: 8px; /* Spacing between icon and text */
+    line-height: 1; /* Ensure it doesn't affect line height of text */
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: #007bff;
+    font-weight: 600;
+}
+
+#category-filters.sticky-top {
+    top: 0; /* Adjust if there's a fixed navbar above that's taller */
+    z-index: 1020; /* Default Bootstrap sticky-top z-index */
+    background-color: #f8f9fa !important; /* Ensure bg matches body or is distinct */
+    padding-bottom: 0.5rem !important; /* Reduce padding if it looks too much when sticky */
+}
+
+#category-filter-container .btn-outline-secondary.active {
+    background-color: #6c757d;
+    color: white;
+}
+
+#category-filter-container .btn {
+    font-size: 0.9rem;
+}
+
+footer.bg-dark {
+    background-color: #343a40 !important; /* Ensure Bootstrap class is effective */
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    margin-top: auto; /* Pushes footer to bottom if main content is short */
+}
+
+/* Homepage Hero Banner Styling */
+#hero {
+    background-image: url('../assets/gunung/bromo.jpg'); /* Moved from inline */
+    background-size: cover;
+    background-position: center;
+    color: white; /* Default text color for banner */
+    position: relative; /* Needed for overlay positioning */
+    padding-top: 5rem; /* Re-apply padding as needed, was py-5 */
+    padding-bottom: 5rem; /* Re-apply padding as needed, was py-5 */
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.55); /* Adjust transparency */
+    z-index: 1; /* Place overlay above background, below content */
+}
+
+#hero .hero-content { /* Target the div wrapping H1 and P */
+    position: relative;
+    z-index: 2; /* Ensure banner content (text) is above the overlay */
+    padding: 20px; /* Similar to the padding the removed div had */
+    border-radius: 10px; /* Similar to the radius the removed div had */
+    /* background-color: rgba(0,0,0,0.1); /* Optional: very subtle bg for content if needed */
+}
+
+#hero h1.fw-light {
+    color: white; /* Ensure high contrast */
+    font-weight: 600 !important; /* Poppins light might be too thin on an image */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Optional: subtle shadow for readability */
+}
+
+#hero p.lead {
+    color: #f0f0f0; /* Slightly off-white for p if needed, or keep white */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Optional */
+    font-size: 1.25rem; /* Ensure it's legible */
+}
+
+
+/* Styling for dynamically added auth forms and profile messages */
+/* Using specific IDs from auth.js to scope styles */
+#registration-form-container,
+#login-form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-top: 2rem; /* Add some space from navbar/previous content */
+    margin-bottom: 2rem;
+}
+
+#registration-form-container h2,
+#login-form-container h2 {
+    margin-bottom: 1.5rem; /* Space below "Register" / "Login" title */
+}
+
+#registration-message,
+#login-message {
+    margin-top: 15px; /* Space for alert messages within forms */
+}
+
+/* User Profile Styling */
+#user-profile-container {
+    margin-top: 2rem; /* Add some space */
+    margin-bottom: 2rem;
+}
+
+#user-profile-container .card {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+#user-profile-container .card-body p {
+    margin-bottom: 0.75rem; /* Adjust spacing between profile items */
+}
+
+#user-profile-container .card-body p strong {
+    color: #343a40;
+}
+
+/* General alert messages that might be added to main by auth.js */
+main > .alert { /* For messages like "Logout successful" directly in main */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Universal Modal Styling */
+#auth-user-modal .modal-dialog {
+    max-width: 500px; /* Default width, can be overridden by modal-lg etc. if needed */
+}
+
+#auth-user-modal .modal-body .form-label { /* Example: if labels inside modal need specific styling */
+    font-weight: 500; /* Slightly bolder than default for better readability in modal */
+}
+
+#auth-user-modal .modal-body .alert { /* Styling for messages inside modal */
+    margin-top: 1rem;
+    margin-bottom: 0; /* Usually messages are last element in modal body */
+}
+
+#auth-user-modal .modal-footer button {
+    min-width: 90px; /* Give footer buttons some minimum width */
+}
+
+/* Specific styling for profile view in modal */
+#auth-user-modal-body .profile-view-container {
+    padding: 10px;
+}
+
+#auth-user-modal-body .profile-view-container p {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+#auth-user-modal-body .profile-view-container p strong {
+    color: #343a40;
+    min-width: 100px;
+    display: inline-block;
+}
+
+
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.2rem;
+    }
+    #hero .lead {
+        font-size: 1.1rem; /* Adjusted from 0.95rem for better visibility on banner */
+    }
+    .card-title {
+        font-size: 1.05rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    #category-filter-container .btn {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+    .navbar-brand-icon {
+        font-size: 1.2em; /* Adjust for smaller screens if needed */
+        margin-right: 6px;
+    }
+    #hero h1 {
+        font-size: 1.8rem;
+    }
+    #hero .lead {
+        font-size: 1rem; /* Adjusted from 0.9rem */
+    }
+    .card-title {
+        font-size: 1rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    /* Adjust modal width for smaller screens if 500px is too wide */
+    #auth-user-modal .modal-dialog {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #registration-form-container, /* These might become obsolete if forms are only in modal */
+    #login-form-container {
+        padding: 20px;
+    }
+}
+
+/* === Cart Page Styles === */
+
+/* General spacing for sections on cart.html */
+#cart-items,
+#sender-address,
+#order-summary {
+    margin-bottom: 2rem; /* Add some space below each section */
+}
+
+#cart-items h2,
+#sender-address h2,
+#order-summary h2 {
+    margin-bottom: 1rem; /* Space below section titles */
+    font-weight: 600; /* Slightly bolder titles, common in Poppins */
+}
+
+/* Styling for individual cart items in the list */
+#cart-items-container .list-group-item {
+    padding: 1rem; /* More padding inside each cart item entry */
+}
+
+#cart-items-container .list-group-item img {
+    width: 75px; /* Slightly larger image */
+    height: 75px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 4px; /* Optional: slightly rounded corners for images */
+}
+
+#cart-items-container .list-group-item h6 {
+    font-weight: 600; /* Bolder product name */
+}
+
+/* Ensure remove button is vertically aligned if text next to it wraps */
+#cart-items-container .list-group-item .remove-from-cart-btn {
+    align-self: center; /* Align button to the center of the flex item space */
+}
+
+/* Sender Address Form */
+#sender-address-form .form-label {
+    font-weight: 500; /* Slightly more emphasis on labels */
+}
+
+/* Order Summary */
+#order-summary-container .list-group-item span:first-child {
+    color: #555; /* Slightly lighter text for labels like 'Subtotal' */
+}
+#order-summary-container .list-group-item strong {
+    font-weight: 600; /* Ensure totals are bold */
+}
+
+#pay-button {
+    font-size: 1.1rem; /* Slightly larger pay button text */
+    padding: 0.75rem 1.5rem; /* More padding for a larger button */
+}
+
+/* === Navigation Cart Badge === */
+#cart-item-count-badge {
+    font-size: 0.75em; /* Adjust badge font size relative to link */
+    padding: 0.3em 0.5em; /* Adjust padding */
+    vertical-align: top; /* Align badge nicely with text */
+    margin-left: 4px; /* Add a little space between "Cart" and badge */
+}
+
+/* If using .bg-primary for badge, and want to ensure it's a specific blue if not default */
+/* .navbar .badge.bg-primary { */
+/*   background-color: #0d6efd !important; /* Bootstrap's default blue */
+/* } */
+
+/* Style for empty cart message */
+#cart-items-container p {
+    font-style: italic;
+    color: #6c757d; /* Bootstrap's secondary text color */
+}
+
+/* === Notification Styles === */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 15px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    z-index: 1050; /* High z-index to appear above most elements */
+    color: #fff; /* Default text color */
+    font-size: 0.95rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    border: 1px solid transparent; /* For border color to be set by specific types */
+    min-width: 250px; /* Minimum width */
+    opacity: 0.95; /* Slight transparency */
+    transition: opacity 0.5s, transform 0.5s; /* For potential future fade/slide effects */
+}
+
+.notification.success {
+    background-color: #28a745; /* Green */
+    border-color: #1e7e34;
+}
+
+.notification.error {
+    background-color: #dc3545; /* Red */
+    border-color: #b02a37;
+}
+
+.notification.info {
+    background-color: #17a2b8; /* Blue/Info */
+    border-color: #117a8b;
+}
+
+/* Example of a closing animation (if a close button is added later) */
+/* .notification.closing {
+    opacity: 0;
+    transform: translateX(-100%);
+} */

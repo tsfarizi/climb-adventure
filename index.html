@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimbAdventure - Petualangan Anda Dimulai Di Sini</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><span class="navbar-brand-icon">⛰️</span> ClimbAdventure</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Produk</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="register-link">Daftar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="login-link">Masuk</a>
+                        </li>
+                        <li class="nav-item d-none">
+                            <a class="nav-link" href="#" id="logout-link">Keluar</a>
+                        </li>
+                        <li class="nav-item d-none">
+                            <a class="nav-link" href="#" id="profile-link">Profil Pengguna</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="py-5 text-center container-fluid">
+            <div class="container hero-content">
+                <h1 class="fw-light">Selamat Datang di ClimbAdventure</h1>
+                <p class="lead">Toko serba ada untuk perlengkapan dan rekomendasi pendakian gunung.</p>
+            </div>
+        </section>
+
+        <section id="superior-products" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-4">Produk Unggulan</h2>
+                <div id="superior-products-row" class="row">
+                    <!-- Product cards will be injected here by js/home.js -->
+                </div>
+            </div>
+        </section>
+
+        <section id="mountain-recommendations" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Rekomendasi Gunung</h2>
+                <div id="mountain-recommendations-row" class="row">
+                    <!-- Recommendation cards will be injected here by js/home.js -->
+                </div>
+            </div>
+        </section>
+
+        <section id="external-resources" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-4">Artikel Eksternal & Tips Mendaki</h2>
+                <div class="articles-container">
+                    <h3>Artikel Pilihan</h3>
+                    <p><a href="https://booking.gedepangrango.org/" target="_blank" rel="noopener noreferrer">Informasi Booking Pendakian Gede Pangrango</a></p>
+                    <p><a href="https://gunung.id/jalur-pendakian-gunung-slamet/" target="_blank" rel="noopener noreferrer">Jalur Pendakian Gunung Slamet</a></p>
+                    <p><a href="https://blog.eigeradventure.com/pendakian-gunung-lawu/" target="_blank" rel="noopener noreferrer">Pendakian Gunung Lawu via Cemoro Sewu</a></p>
+                </div>
+                <div class="tips-container mt-5"> <!-- Added mt-5 for spacing -->
+                    <h3>Tips & Trik</h3>
+                    <p>Ini adalah tips pertama yang sangat berguna untuk pendakian Anda.</p>
+                    <p>Jangan lupa membawa air yang cukup dan camilan energi.</p>
+                    <p>Selalu periksa cuaca sebelum memulai pendakian dan beri tahu seseorang rencana Anda.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-info" class="py-5 bg-light">
+            <div class="container text-center">
+                <h2>Kontak Kami</h2>
+                <p>Untuk informasi lebih lanjut silakan hubungi kami melalui WhatsApp.</p>
+                <a href="https://wa.me/6285770526408" class="btn btn-success" target="_blank" rel="noopener noreferrer">Chat WhatsApp</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-4 bg-dark text-white text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2023 ClimbAdventure.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/db-migration.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/global-nav.js"></script>
+    <script src="js/home.js"></script>
+
+    <!-- Universal Modal -->
+    <div class="modal fade" id="auth-user-modal" tabindex="-1" aria-labelledby="auth-user-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="auth-user-modal-label">Modal Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="auth-user-modal-body">
+                    <!-- Content will be injected here -->
+                </div>
+                <div class="modal-footer" id="auth-user-modal-footer">
+                    <!-- Footer buttons can be injected here if needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mountain Detail Modal -->
+    <div class="modal fade" id="mountain-detail-modal" tabindex="-1" aria-labelledby="mountain-detail-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mountain-detail-modal-label">Detail Gunung</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3 align-items-start">
+                        <div class="col-md-4">
+                            <img id="mountain-detail-image" src="" alt="" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-8">
+                            <h5 id="mountain-detail-name"></h5>
+                            <p id="mountain-detail-description" class="mb-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
