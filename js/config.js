@@ -1,1 +1,2 @@
-const POCKETBASE_URL = 'http://127.0.0.1:8090';
+const POCKETBASE_URL = 'https://s49n33ml-8090.asse.devtunnels.ms';
+
